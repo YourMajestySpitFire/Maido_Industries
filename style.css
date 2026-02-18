@@ -1,0 +1,70 @@
+:root {
+  /* Primary Colors - Inspired by the figure's dress and hair */
+  --color-primary-cream: #EED7A0; /* Light gold/tan highlight */
+  --color-primary-beige: #B99682; /* Warm hair and tail tone */
+
+  /* Secondary & Accents - Inspired by the boots and shadows */
+  --color-secondary-brown: #4C322B; /* Deep mahogany from suitcases */
+  --color-accent-black: #0E0502;    /* Dark black from boots/stockings */
+  --color-muted-earth: #7E5D4F;     /* Muted shadow/skin tone */
+
+  /* Background/Text Utilities */
+  --bg-main: #FDFBF7; /* Soft off-white for body background */
+  --text-main: #2B140C; /* Dark brown for readable text */
+}
+
+/* Example Usage */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-primary {
+  background-color: var(--color-primary-cream);
+  color: var(--color-secondary-brown);
+  border: 2px solid var(--color-primary-beige);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-beige);
+  color: white;
+}
+
+.header {
+  background-color: var(--color-accent-black);
+  color: var(--color-primary-cream);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--color-secondary-brown);
+  color: var(--color-primary-cream);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.card {
+  border: 1px solid var(--color-muted-earth);
+  padding: 15px;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+}
+
+Palette Breakdown:
+
+    #EED7A0 (Highlight): Use this for calls-to-action (CTAs) or navigation highlights.
+
+    #B99682 (Secondary): Great for borders, icons, or secondary buttons.
+
+    #0E0502 (Contrast): Best for headers or bold typography to create a high-fashion look.
+
+    #4C322B (Shadow): Ideal for footers or deep background sections to anchor the page.
+
+    #7E5D4F (Muted): Perfect for metadata, captions, or divider lines.
