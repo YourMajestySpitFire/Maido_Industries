@@ -38,6 +38,11 @@ Run `ng test` to execute the unit tests via Vitest.
 
 Run `ng e2e` to execute the end-to-end tests.
 
+## 🎨 Inspiration
+
+The design of this application is inspired by Pukimaa.
+https://github.com/Pukimaa.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the Angular CLI Overview and Command Reference page.
