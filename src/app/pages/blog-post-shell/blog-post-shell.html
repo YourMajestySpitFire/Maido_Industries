@@ -1,17 +1,26 @@
-<div class="max-w-3xl mx-auto p-8 mt-10">
-  @let post = blogPost();
+<div class="w-full h-full overflow-y-auto">
+  <main class="animate-entry max-w-3xl mx-auto px-6 pt-24 pb-32 flex flex-col font-sans">
+    @let post = blogPost();
 
-  @if (post) {
-    <article>
-      <header class="mb-8 border-b border-gray-200 pb-6">
-        <h1 class="text-4xl font-bold text-primary mb-2">{{ post.title }}</h1>
-        <div class="text-sm text-gray-500 mb-4">{{ post.date }}</div>
-        <p class="text-lg text-gray-700 italic">{{ post.description }}</p>
-      </header>
+    @if (post) {
+      <article>
+        <header class="mb-16">
+          <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl text-text mb-6">
+            {{ post.title }}
+          </h1>
+          <div class="flex items-center gap-4 text-overlay">
+            <time class="text-xs uppercase tracking-widest font-semibold">{{ post.date }}</time>
+            <span class="h-1 w-1 rounded-full bg-surface"></span>
+            <span class="text-xs uppercase tracking-widest font-semibold">Article</span>
+          </div>
+        </header>
 
-      <markdown [data]="markdownContent()" class="prose prose-lg max-w-none text-text"> </markdown>
-    </article>
-  } @else {
-    <div class="text-center mt-20 text-xl text-red-500">todo</div>
-  }
+        <markdown
+          class="prose prose-custom dark:prose-invert max-w-none block"
+          [data]="markdownContent()"
+        >
+        </markdown>
+      </article>
+    }
+  </main>
 </div>

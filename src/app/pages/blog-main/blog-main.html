@@ -1,6 +1,5 @@
 <div class="w-full h-full overflow-y-auto">
   <main class="max-w-3xl mx-auto px-6 pt-24 pb-32 flex flex-col font-sans selection:bg-surface">
-
     <header class="mb-12 animate-entry">
       <h1 class="text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none text-text">
         Blog
@@ -12,10 +11,12 @@
         <a
           [routerLink]="['/blog', post.slug]"
           class="animate-entry flex flex-col space-y-1 mb-6 group cursor-pointer no-underline opacity-0"
-          [style.animation-delay.ms]="i * 80"
+          [style.animation-delay.ms]="i * 120"
         >
           <div class="w-full flex flex-col">
-            <p class="tracking-tight text-lg font-medium text-text group-hover:text-subtext transition-colors duration-200">
+            <p
+              class="tracking-tight text-lg font-medium text-text group-hover:text-subtext transition-colors duration-200"
+            >
               {{ post.title }}
             </p>
             <p class="h-6 text-xs text-overlay font-light tabular-nums">
@@ -27,6 +28,5 @@
         <p class="text-subtext italic">No content found.</p>
       }
     </section>
-
   </main>
 </div>

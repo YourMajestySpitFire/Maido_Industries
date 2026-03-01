@@ -9,6 +9,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   standalone: true,
   imports: [MarkdownComponent],
   templateUrl: './blog-post-shell.html',
+  styleUrl: './blog-post-shell.scss',
 })
 export class BlogPostShell implements OnInit {
   private route = inject(ActivatedRoute);

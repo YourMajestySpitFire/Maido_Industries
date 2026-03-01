@@ -1,0 +1,84 @@
+@reference "tailwindcss";
+
+:host ::ng-deep {
+  .prose-custom {
+    --tw-prose-body: var(--text);
+    --tw-prose-headings: var(--text);
+    --tw-prose-links: var(--text);
+    --tw-prose-bold: var(--text);
+    --tw-prose-counters: var(--subtext);
+    --tw-prose-bullets: var(--overlay);
+    --tw-prose-quotes: var(--subtext);
+    --tw-prose-hr: var(--surface);
+    --tw-prose-captions: var(--subtext);
+    --tw-prose-code: var(--text);
+    --tw-prose-pre-bg: var(--surface);
+    --tw-prose-pre-code: var(--text);
+
+    :where(h1, h2, h3, h4):not(:where([class~='not-prose'] *)) {
+      @apply tracking-tighter font-bold mt-10 mb-5;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    :where(h1):not(:where([class~='not-prose'] *)) {
+      @apply text-3xl sm:text-4xl;
+    }
+
+    :where(h2):not(:where([class~='not-prose'] *)) {
+      @apply text-2xl border-b pb-2;
+      border-color: rgba(204, 208, 218, 0.3); // odpowiednik var(--surface) z opacity
+    }
+
+    :where(p):not(:where([class~='not-prose'] *)) {
+      @apply my-5 leading-relaxed;
+      color: var(--subtext);
+    }
+
+    :where(ul):not(:where([class~='not-prose'] *)) {
+      @apply list-disc list-outside ml-6 space-y-2 my-6;
+    }
+
+    :where(ol):not(:where([class~='not-prose'] *)) {
+      @apply list-decimal list-outside ml-6 space-y-2 my-6;
+    }
+
+    :where(li):not(:where([class~='not-prose'] *)) {
+      @apply pl-1;
+    }
+
+    :where(code):not(:where([class~='not-prose'] *)) {
+      @apply rounded px-1.5 py-0.5 text-[0.9em] font-mono before:content-none after:content-none;
+      background-color: rgba(204, 208, 218, 0.5);
+      color: var(--text);
+    }
+
+    :where(pre):not(:where([class~='not-prose'] *)) {
+      @apply border backdrop-blur-sm rounded-xl !px-4 !py-4 my-8 overflow-x-auto font-mono text-sm;
+      border-color: var(--surface);
+      background-color: rgba(204, 208, 218, 0.3);
+
+      code {
+        background-color: transparent !important;
+        padding: 0 !important;
+        color: inherit;
+      }
+    }
+
+    :where(a):not(:where([class~='not-prose'] *)) {
+      @apply underline underline-offset-4 transition-colors;
+      text-decoration-color: var(--surface);
+      color: var(--text);
+
+      &:hover {
+        text-decoration-color: var(--text);
+      }
+    }
+
+    :where(blockquote):not(:where([class~='not-prose'] *)) {
+      @apply border-l-4 pl-6 italic my-8;
+      border-color: var(--surface);
+      color: var(--subtext);
+    }
+  }
+}

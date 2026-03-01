@@ -1,5 +1,11 @@
 [
   {
+    "slug": "example-pos-2",
+    "title": "Mistrzostwo Markdown: Edycja z Kotkiem 🐾",
+    "date": "2026-03-01",
+    "description": "Kompletny przewodnik po formatowaniu treści z wykorzystaniem multimediów, list i zaawansowanego kodu."
+  },
+  {
     "slug": "example-post",
     "title": "Mój pierwszy post",
     "date": "2026-03-01",
