@@ -1,1 +1,19 @@
 @import 'tailwindcss';
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --primary-color: #3b82f6;
+}
+
+@theme {
+  --color-background: var(--bg-color);
+  --color-text: var(--text-color);
+  --color-primary: var(--primary-color);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text antialiased;
+  }
+}
