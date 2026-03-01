@@ -1,15 +1,39 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #171717;
+  --color-base: var(--base);
+  --color-surface: var(--surface);
+  --color-overlay: var(--overlay);
+  --color-text: var(--text);
+  --color-subtext: var(--subtext);
 }
 
 :root {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  /* light */
+  --base: #eff1f5;
+  --surface: #ccd0da;
+  --overlay: #9ca0b0;
+  --text: #4c4f69;
+  --subtext: #6c6f85;
+
+  background-color: var(--base);
+  color: var(--text);
+}
+
+.dark {
+  /* dark */
+  --base: #24273a;
+  --surface: #363a4f;
+  --overlay: #5b6078;
+  --text: #cad3f5;
+  --subtext: #939ab7;
 }
 
 body {
-  @apply antialiased selection:bg-neutral-100;
+  @apply antialiased selection:bg-surface;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }

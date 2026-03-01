@@ -6,13 +6,19 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './nav.html',
-  styleUrls: ['./nav.scss'],
+  styleUrl: './nav.scss',
 })
 export class Nav {
   isDark = signal(false);
 
   toggleTheme() {
     this.isDark.update((v) => !v);
-    document.documentElement.classList.toggle('dark');
+    const html = document.documentElement;
+
+    if (this.isDark()) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
   }
 }
