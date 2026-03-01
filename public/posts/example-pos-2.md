@@ -64,4 +64,4 @@ export const welcomeUser = (name: string): string => {
   return `${greeting}, ${name}! Miło Cię widzieć na moim blogu.`;
 };
 
-console.log(welcomeUser('Pukima'));
+console.log(welcomeUser('User'));
