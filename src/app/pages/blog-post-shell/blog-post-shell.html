@@ -1,0 +1,17 @@
+<div class="max-w-3xl mx-auto p-8 mt-10">
+  @if (post) {
+    <article>
+      <header class="mb-8 border-b border-gray-200 pb-6">
+        <h1 class="text-4xl font-bold text-primary mb-2">{{ post.title }}</h1>
+        <div class="text-sm text-gray-500 mb-4">{{ post.date }}</div>
+        <p class="text-lg text-gray-700 italic">{{ post.description }}</p>
+      </header>
+
+      <markdown [src]="postContentUrl" class="prose prose-lg max-w-none text-text"></markdown>
+    </article>
+  } @else {
+    <div class="text-center mt-20 text-xl text-red-500">
+      Nie znaleziono posta. Sprawdź, czy adres URL jest poprawny.
+    </div>
+  }
+</div>
