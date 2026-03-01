@@ -30,6 +30,10 @@
   will-change: transform, opacity, filter;
 }
 
+@utility layout-container {
+  @apply mx-auto w-full max-w-[1100px] px-4 pt-8 md:pt-16 2xl:pt-28 pb-32;
+}
+
 :root {
   --base: #eff1f5;
   --surface: #ccd0da;
