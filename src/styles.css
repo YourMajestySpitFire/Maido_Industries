@@ -39,10 +39,6 @@
 }
 
 @utility layout-gap {
-  @apply space-y-[--spacing-section-sm] md:space-y-[--spacing-section-md] 2xl:space-y-[--spacing-section-4k];
-}
-
-@utility layout-gap {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-section-sm);
@@ -54,6 +50,10 @@
   @media (min-width: 1536px) {
     gap: var(--spacing-section-4k);
   }
+}
+
+footer {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 :root {
