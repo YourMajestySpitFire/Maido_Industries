@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Theme } from '../models/theme.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
-  setItem(key: string, value: string): void {
+  public setItem(key: string, value: string): void {
     localStorage.setItem(key, value);
   }
 
-  getItem(key: string): string | null {
-    return localStorage.getItem(key);
+  public getItem(key: string): Theme | null {
+    const item = localStorage.getItem(key);
+
+    if (!item) return null;
+
+    return item as Theme;
   }
 }

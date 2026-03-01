@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StorageService } from '../../services/storage';
+import { Theme } from '../../models/theme.type';
 
 @Component({
   selector: 'app-nav',
@@ -11,10 +12,11 @@ import { StorageService } from '../../services/storage';
 })
 export class Nav {
   private store = inject(StorageService);
+
   protected isDark = signal(false);
 
   protected ngOnInit() {
-    const savedTheme = this.store.getItem('theme');
+    const savedTheme: Theme | null = this.store.getItem('theme');
 
     if (savedTheme === 'dark') {
       this.isDark.set(true);

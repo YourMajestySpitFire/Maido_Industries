@@ -16,15 +16,15 @@ export interface BlogPost {
 export class BlogService {
   private http = inject(HttpClient);
 
-  getAllPosts(): Observable<BlogPost[]> {
+  public getAllPosts(): Observable<BlogPost[]> {
     return this.http.get<BlogPost[]>('/posts.json');
   }
 
-  getPostBySlug(slug: string): Observable<BlogPost | undefined> {
+  public getPostBySlug(slug: string): Observable<BlogPost | undefined> {
     return this.getAllPosts().pipe(map((posts) => posts.find((p) => p.slug === slug)));
   }
 
-  getPostContent(slug: string): Observable<string> {
+  public getPostContent(slug: string): Observable<string> {
     return this.http.get(`/posts/${slug}.md`, { responseType: 'text' }).pipe(
       map(content => content.replace(/^---[\s\S]*?---\n*/, ''))
     );
