@@ -1,1 +1,90 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-base: var(--base);
+  --color-surface: var(--surface);
+  --color-overlay: var(--overlay);
+  --color-text: var(--text);
+  --color-subtext: var(--subtext);
+
+  --spacing-section-sm: 3rem; /* 48px - Mobile */
+  --spacing-section-md: 4rem; /* 64px - Laptop / MacBook Air */
+  --spacing-section-4k: 9rem; /* 144px - Screens 4K */
+}
+
+@keyframes page-in {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+@utility animate-entry {
+  animation: page-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  backface-visibility: hidden;
+  will-change: transform, opacity, filter;
+}
+
+@utility layout-container {
+  @apply mx-auto w-full max-w-[1100px] px-4 pt-8 md:pt-16 2xl:pt-28 pb-32;
+}
+
+@utility layout-gap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-section-sm);
+
+  @media (min-width: 768px) {
+    gap: var(--spacing-section-md);
+  }
+
+  @media (min-width: 1536px) {
+    gap: var(--spacing-section-4k);
+  }
+}
+
+footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:root {
+  --base: #f2e0d0;
+  --surface: #bfab99;
+  --overlay: #bf938f;
+  --text: #260f07;
+  --subtext: #735149;
+}
+
+.dark {
+  --base: #24273a;
+  --surface: #363a4f;
+  --overlay: #5b6078;
+  --text: #cad3f5;
+  --subtext: #939ab7;
+}
+
+html,
+body {
+  @apply h-full;
+  background-color: var(--base);
+  color: var(--text);
+}
+
+body {
+  @apply antialiased;
+}
+
+.theme-transitioning * {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease !important;
+}

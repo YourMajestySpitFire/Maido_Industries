@@ -1,59 +1,48 @@
-# MaidoIndustries
+# Maido Industries
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Welcome to the **Maido Industries** repository. This project is a modern web application built with Angular, designed to serve as a blog and content platform.
 
-## Development server
+## 🚀 Tech Stack
 
-To start a local development server, run:
+- **Framework:** [Angular](https://angular.dev/) (v21+)
+  - Utilizes the latest control flow syntax (`@if`, `@let`) for better performance and readability.
+- **Styling:** Tailwind CSS
+  - Fully responsive design utilizing utility classes.
+- **Icons:** Material Symbols & Icons
+  - Integrated for consistent and scalable UI iconography.
 
-```bash
-ng serve
-```
+## 🛠️ Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Responsive Layout:** Optimized for all device sizes, from mobile to large 2xl screens.
+- **Theming:** Custom color palette integration (e.g., `bg-base`, `text-text`, `bg-surface`).
 
-## Code scaffolding
+## 📦 Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Development server
 
-```bash
-ng generate component component-name
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Code scaffolding
 
-```bash
-ng generate --help
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Building
+### Building
 
-To build the project run:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-```bash
-ng build
-```
+### Running unit tests
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Run `ng test` to execute the unit tests via Vitest.
 
-## Running unit tests
+### Running end-to-end tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Run `ng e2e` to execute the end-to-end tests.
 
-```bash
-ng test
-```
+## 🎨 Inspiration
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The design of this application is inspired by Pukimaa.
+https://github.com/Pukimaa.
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more information on using the Angular CLI, including detailed command references, visit the Angular CLI Overview and Command Reference page.

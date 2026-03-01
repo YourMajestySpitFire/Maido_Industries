@@ -1,0 +1,65 @@
+@reference "tailwindcss";
+
+$ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+.nav-link {
+  @apply relative flex h-9 w-9 items-center justify-center transition-all duration-300 transform-gpu;
+  transition-timing-function: $ease-spring;
+
+  &:hover {
+    @apply w-14 mx-0.5;
+
+    .icon-box {
+      background-color: var(--surface);
+      color: var(--text);
+      @apply h-8 w-8;
+    }
+
+    .tooltip {
+      @apply scale-100 opacity-100;
+    }
+
+    .material-icons {
+      @apply scale-110;
+    }
+  }
+
+  &.active {
+    .icon-box {
+      background-color: var(--surface);
+      color: var(--text);
+      @apply shadow-sm;
+    }
+
+    .active-indicator {
+      background-color: var(--text);
+      @apply absolute -bottom-0.5 h-0.5 w-0.5 rounded-full;
+    }
+  }
+}
+
+.icon-box {
+  color: var(--subtext);
+  @apply flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300;
+  transition-timing-function: $ease-spring;
+}
+
+.material-icons {
+  @apply text-[18px] transition-transform duration-300;
+}
+
+.tooltip {
+  background-color: var(--text);
+  color: var(--base);
+  @apply absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 scale-0 rounded-md
+         px-2 py-0.5 text-[10px] font-medium opacity-0
+         transition-all duration-200 pointer-events-none shadow-md;
+}
+
+:host {
+  @apply cursor-default;
+  button,
+  a {
+    cursor: pointer !important;
+  }
+}

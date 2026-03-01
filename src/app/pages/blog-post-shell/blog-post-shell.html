@@ -1,0 +1,35 @@
+<div class="w-full h-full overflow-y-auto bg-base">
+  <main class="layout-container animate-entry font-sans selection:bg-surface">
+    @let post = blogPost();
+
+    @if (post) {
+      <article class="layout-gap">
+        <header class="flex flex-col items-center md:items-start text-center md:text-left">
+          <h1
+            class="text-4xl md:text-5xl lg:text-7xl 2xl:text-9xl font-extrabold tracking-tighter text-text leading-tight mb-6 2xl:mb-12"
+          >
+            {{ post.title }}
+          </h1>
+
+          <div
+            class="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 2xl:gap-8 text-overlay"
+          >
+            <time class="text-xs md:text-sm 2xl:text-2xl uppercase tracking-widest font-bold">
+              {{ post.date }}
+            </time>
+            <span class="h-1 w-1 2xl:h-2 2xl:w-2 rounded-full bg-surface"></span>
+            <span class="text-xs md:text-sm 2xl:text-2xl uppercase tracking-widest font-bold">
+              Article
+            </span>
+          </div>
+        </header>
+
+        <markdown
+          class="prose prose-custom dark:prose-invert max-w-none block"
+          [data]="markdownContent()"
+        >
+        </markdown>
+      </article>
+    }
+  </main>
+</div>
