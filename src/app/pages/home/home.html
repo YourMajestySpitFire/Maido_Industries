@@ -1,57 +1,59 @@
-<div class="w-full h-full overflow-y-auto">
+<div class="w-full h-full overflow-y-auto bg-base">
   <main
-    class="animate-entry max-w-3xl mx-auto px-6 pt-24 pb-32 flex flex-col space-y-12 font-sans selection:bg-surface"
+    class="animate-entry mx-auto w-full max-w-[1100px] px-4 pt-8 md:pt-16 2xl:pt-28 pb-32 flex flex-col space-y-12 md:space-y-16 2xl:space-y-36 font-sans selection:bg-surface"
   >
-    <section id="me">
-      <div class="w-full space-y-8">
-        <div
-          class="gap-6 flex flex-col md:flex-row items-center md:items-start text-center md:text-left"
-        >
-          <div class="flex shrink-0">
-            <span
-              class="relative flex overflow-hidden rounded-full md:size-28 size-20 border border-surface shadow-sm"
-            >
-              <img class="aspect-square h-full w-full object-cover" alt="avatar" src="/me.jpg" />
-            </span>
-          </div>
+    <section id="me" class="w-full">
+      <div
+        class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 2xl:gap-16 text-center md:text-left"
+      >
+        <div class="flex shrink-0">
+          <span
+            class="relative flex overflow-hidden rounded-full size-32 md:size-36 2xl:size-56 border-2 border-surface shadow-md"
+          >
+            <img class="aspect-square h-full w-full object-cover" alt="avatar" src="/me.jpg" />
+          </span>
+        </div>
 
-          <div class="flex flex-col space-y-2 md:pt-2">
-            <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl text-text">
-              Heya!
-            </h1>
+        <div class="flex flex-col space-y-3 2xl:space-y-6 md:pt-2 w-full">
+          <h1
+            class="text-5xl md:text-5xl lg:text-6xl 2xl:text-9xl font-extrabold tracking-tighter text-text leading-tight"
+          >
+            Heya!
+          </h1>
 
-            <p class="max-w-[600px] text-subtext md:text-xl font-normal leading-tight">
-              I'm Pukima, a designer & developer based in Northern Germany
-            </p>
-          </div>
+          <p class="text-subtext text-lg md:text-xl 2xl:text-4xl font-semibold leading-snug">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus orci, maximus
+            pharetra leo nec, commodo gravida tellus. Maecenas quis justo nulla. In in lorem eget
+            dolor consequat iaculis.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="space-y-4">
-      <h2 class="text-xl font-bold text-text tracking-tight">About</h2>
+    <section id="about" class="space-y-4 md:space-y-6 2xl:space-y-10">
+      <h2 class="text-xl md:text-2xl 2xl:text-5xl font-bold text-text tracking-tight uppercase">
+        About
+      </h2>
 
-      <div class="text-subtext text-base md:text-lg leading-relaxed space-y-4">
+      <div
+        class="text-subtext text-base md:text-lg 2xl:text-3xl font-semibold leading-relaxed space-y-4 2xl:space-y-8"
+      >
         <p>
-          From a young age, I began coding my own website, and over time, I discovered the profound
-          impact of design. My mission is to create high-quality products that are not only
-          well-developed but also feature a thoughtfully crafted design language.
-        </p>
-
-        <p>
-          I believe by combining functionality and aesthetics, I can deliver exceptional user
-          experiences.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus orci, maximus
+          pharetra leo nec, commodo gravida tellus. Maecenas quis justo nulla. In in lorem eget
+          dolor consequat iaculis. Nullam ultrices vestibulum enim, ut consequat magna euismod ut.
+          Quisque turpis augue, dictum eget mauris sit amet, ornare placerat lectus.
         </p>
       </div>
     </section>
 
-    <section id="projects" class="space-y-6 w-full">
-      <div class="flex flex-col space-y-2">
-        <h2 class="text-xl font-bold text-text tracking-tight">My Projects</h2>
-
-        <p class="text-subtext text-base md:text-lg">
-          I've worked on a variety of projects, from simple websites to complex branding projects.
-          Here are a few of my favorites.
+    <section id="projects" class="space-y-4 md:space-y-6 2xl:space-y-10 w-full">
+      <div class="flex flex-col space-y-4 2xl:space-y-8">
+        <h2 class="text-xl md:text-2xl 2xl:text-5xl font-bold text-text tracking-tight uppercase">
+          My Projects
+        </h2>
+        <p class="text-subtext text-base md:text-lg 2xl:text-3xl font-semibold italic">
+          Kappa Kappa Kappa
         </p>
       </div>
     </section>
