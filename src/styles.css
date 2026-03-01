@@ -20,23 +20,23 @@ body {
 }
 
 .nav-link {
-  @apply relative flex h-12 w-12 items-center justify-center transition-all duration-300 ease-spring transform-gpu hover:w-18 hover:mx-0.5;
+  @apply relative flex h-9 w-9 items-center justify-center transition-all duration-300 ease-spring transform-gpu hover:w-14 hover:mx-0.5;
 }
 
 .icon-box {
-  @apply flex h-10 w-10 items-center justify-center rounded-full text-neutral-500
+  @apply flex h-7.5 w-7.5 items-center justify-center rounded-full text-neutral-500
          transition-all duration-300 ease-spring
-         group-hover:h-11 group-hover:w-11 group-hover:bg-neutral-100
+         group-hover:h-8.5 group-hover:w-8.5 group-hover:bg-neutral-100
          dark:group-hover:bg-neutral-800 group-hover:text-neutral-900 dark:group-hover:text-white;
 }
 
 .nav-link .material-icons {
-  @apply transition-transform duration-300 group-hover:scale-110;
+  @apply text-[18px] transition-transform duration-300 group-hover:scale-110;
 }
 
 .tooltip {
-  @apply absolute bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 scale-0 rounded-lg bg-neutral-900
-         px-2.5 py-1 text-[11px] font-medium text-white opacity-0 transition-all
+  @apply absolute bottom-[calc(100%+6px)] left-1/2 -translate-x-1/2 scale-0 rounded-md bg-neutral-900
+         px-2 py-0.5 text-[10px] font-medium text-white opacity-0 transition-all
          duration-200 group-hover:scale-100 group-hover:opacity-100 pointer-events-none shadow-md;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .nav-link.active .active-indicator {
-  @apply absolute -bottom-1 h-1 w-1 rounded-full bg-neutral-900 dark:bg-white;
+  @apply absolute -bottom-0.5 h-0.5 w-0.5 rounded-full bg-neutral-900 dark:bg-white;
 }
 
 .nav-link,
