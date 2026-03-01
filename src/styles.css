@@ -17,9 +17,6 @@
   --overlay: #9ca0b0;
   --text: #4c4f69;
   --subtext: #6c6f85;
-
-  background-color: var(--base);
-  color: var(--text);
 }
 
 .dark {
@@ -31,8 +28,15 @@
   --subtext: #939ab7;
 }
 
+html,
 body {
-  @apply antialiased selection:bg-surface;
+  @apply h-full;
+  background-color: var(--base);
+  color: var(--text);
+}
+
+body {
+  @apply antialiased;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
