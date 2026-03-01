@@ -13,7 +13,7 @@ export class Nav {
   private store = inject(StorageService);
   protected isDark = signal(false);
 
-  ngOnInit() {
+  protected ngOnInit() {
     const savedTheme = this.store.getItem('theme');
 
     if (savedTheme === 'dark') {
@@ -22,7 +22,7 @@ export class Nav {
     }
   }
 
-  toggleTheme() {
+  protected toggleTheme() {
     const newState = !this.isDark();
     this.isDark.set(newState);
 

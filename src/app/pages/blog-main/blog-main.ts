@@ -11,17 +11,12 @@ import { BlogPost, BlogService } from '../../services/blog';
 })
 export class Blog implements OnInit {
   private blogService = inject(BlogService);
-
   posts = signal<BlogPost[]>([]);
 
   ngOnInit() {
     this.blogService.getAllPosts().subscribe({
-      next: (data) => {
-        this.posts.set(data);
-      },
-      error: (err) => {
-        console.error('Error', err);
-      },
+      next: (data) => this.posts.set(data),
+      error: (err) => console.error('Error fetching posts:', err),
     });
   }
 }
