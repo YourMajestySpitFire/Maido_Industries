@@ -1,0 +1,56 @@
+<div class="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex w-full justify-center pb-8">
+  <nav
+    class="pointer-events-auto flex h-16 items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-3 shadow-2xl backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-900/80"
+  >
+    <div class="flex items-center">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link group"
+      >
+        <div class="icon-box">
+          <span class="material-icons">home</span>
+        </div>
+        <span class="tooltip">Home</span>
+        <div class="active-indicator"></div>
+      </a>
+
+      <a routerLink="/blog" routerLinkActive="active" class="nav-link group">
+        <div class="icon-box">
+          <span class="material-icons">book</span>
+        </div>
+        <span class="tooltip">Blog</span>
+        <div class="active-indicator"></div>
+      </a>
+    </div>
+
+    <div class="mx-2 h-6 w-px bg-neutral-200 dark:bg-neutral-800"></div>
+
+    <div class="flex items-center">
+      <a href="https://github.com/YourMajestySpitFire" target="_blank" class="nav-link group">
+        <div class="icon-box">
+          <span class="material-icons">terminal</span>
+        </div>
+        <span class="tooltip">GitHub</span>
+      </a>
+      <a href="mailto:patrykz.pz@gmail.com" class="nav-link group">
+        <div class="icon-box">
+          <span class="material-icons">mail</span>
+        </div>
+        <span class="tooltip">Mail</span>
+      </a>
+    </div>
+
+    <div class="mx-2 h-6 w-px bg-neutral-200 dark:bg-neutral-800"></div>
+
+    <button (click)="toggleTheme()" class="nav-link group">
+      <div class="icon-box">
+        <span class="material-icons">
+          {{ isDark() ? 'light_mode' : 'dark_mode' }}
+        </span>
+      </div>
+      <span class="tooltip">Theme</span>
+    </button>
+  </nav>
+</div>
