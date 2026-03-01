@@ -16,18 +16,23 @@ export class BlogPostShell implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   protected blogPost = signal<BlogPost | undefined>(undefined);
-  protected postContentUrl: string = '';
+  protected markdownContent = signal<string>('');
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
     if (slug) {
-      this.postContentUrl = `/posts/${slug}.md`;
-
       this.blogService
         .getPostBySlug(slug)
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe((data) => {
           this.blogPost.set(data);
+        });
+
+      this.blogService
+        .getPostContent(slug)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((cleanContent) => {
+          this.markdownContent.set(cleanContent);
         });
     }
   }

@@ -23,4 +23,10 @@ export class BlogService {
   getPostBySlug(slug: string): Observable<BlogPost | undefined> {
     return this.getAllPosts().pipe(map((posts) => posts.find((p) => p.slug === slug)));
   }
+
+  getPostContent(slug: string): Observable<string> {
+    return this.http.get(`/posts/${slug}.md`, { responseType: 'text' }).pipe(
+      map(content => content.replace(/^---[\s\S]*?---\n*/, ''))
+    );
+  }
 }

@@ -17,11 +17,10 @@ export class Blog implements OnInit {
   ngOnInit() {
     this.blogService.getAllPosts().subscribe({
       next: (data) => {
-        console.log('Pobrane posty z JSON:', data);
         this.posts.set(data);
       },
       error: (err) => {
-        console.error('Błąd podczas pobierania postów:', err);
+        console.error('Error', err);
       },
     });
   }
