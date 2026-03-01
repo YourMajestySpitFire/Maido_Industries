@@ -57,11 +57,11 @@ footer {
 }
 
 :root {
-  --base: #eff1f5;
-  --surface: #ccd0da;
-  --overlay: #9ca0b0;
-  --text: #4c4f69;
-  --subtext: #6c6f85;
+  --base: #f2e0d0;
+  --surface: #bfab99;
+  --overlay: #bf938f;
+  --text: #260f07;
+  --subtext: #735149;
 }
 
 .dark {
