@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface BlogPost {
   slug: string;
@@ -11,20 +14,13 @@ export interface BlogPost {
   providedIn: 'root',
 })
 export class BlogService {
-  private posts: BlogPost[] = [
-    {
-      slug: 'example-post',
-      title: 'Mój pierwszy post',
-      date: '2026-03-01',
-      description: 'To jest testowy post na moim nowym blogu.',
-    },
-  ];
+  private http = inject(HttpClient);
 
-  getAllPosts(): BlogPost[] {
-    return this.posts;
+  getAllPosts(): Observable<BlogPost[]> {
+    return this.http.get<BlogPost[]>('/posts.json');
   }
 
-  getPostBySlug(slug: string): BlogPost | undefined {
-    return this.posts.find((p) => p.slug === slug);
+  getPostBySlug(slug: string): Observable<BlogPost | undefined> {
+    return this.getAllPosts().pipe(map((posts) => posts.find((p) => p.slug === slug)));
   }
 }

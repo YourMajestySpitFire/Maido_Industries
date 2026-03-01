@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BlogPost, BlogService } from '../../services/blog';
@@ -11,9 +11,18 @@ import { BlogPost, BlogService } from '../../services/blog';
 })
 export class Blog implements OnInit {
   private blogService = inject(BlogService);
-  posts: BlogPost[] = [];
+
+  posts = signal<BlogPost[]>([]);
 
   ngOnInit() {
-    this.posts = this.blogService.getAllPosts();
+    this.blogService.getAllPosts().subscribe({
+      next: (data) => {
+        console.log('Pobrane posty z JSON:', data);
+        this.posts.set(data);
+      },
+      error: (err) => {
+        console.error('Błąd podczas pobierania postów:', err);
+      },
+    });
   }
 }

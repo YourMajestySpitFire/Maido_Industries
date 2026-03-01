@@ -1,5 +1,9 @@
+---
+title: 'Mój pierwszy post'
+date: '2026-03-01'
+description: 'To jest testowy post na moim nowym blogu, ładowany z automatu.'
+---
+
 # Witaj na moim blogu!
 
-To jest treść pierwszego posta. Używamy **Markdown**, żeby łatwo i szybko pisać artykuły bez dotykania kodu HTML.
-
-Tailwind zajmie się później ładnym stylowaniem tego tekstu.
+To jest treść pierwszego posta.

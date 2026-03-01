@@ -2,7 +2,7 @@
   <h1 class="text-4xl font-bold mb-8 text-text">Blog</h1>
 
   <div class="space-y-6">
-    @for (post of posts; track post.slug) {
+    @for (post of posts(); track post.slug) {
       <article
         class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
       >

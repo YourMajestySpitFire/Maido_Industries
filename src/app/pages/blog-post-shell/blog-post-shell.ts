@@ -1,7 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent } from 'ngx-markdown';
 import { BlogPost, BlogService } from '../../services/blog';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-blog-post',
@@ -12,15 +13,22 @@ import { BlogPost, BlogService } from '../../services/blog';
 export class BlogPostShell implements OnInit {
   private route = inject(ActivatedRoute);
   private blogService = inject(BlogService);
+  private destroyRef = inject(DestroyRef);
 
-  post: BlogPost | undefined;
-  postContentUrl: string = '';
+  protected blogPost = signal<BlogPost | undefined>(undefined);
+  protected postContentUrl: string = '';
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
     if (slug) {
-      this.post = this.blogService.getPostBySlug(slug);
       this.postContentUrl = `/posts/${slug}.md`;
+
+      this.blogService
+        .getPostBySlug(slug)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((data) => {
+          this.blogPost.set(data);
+        });
     }
   }
 }
