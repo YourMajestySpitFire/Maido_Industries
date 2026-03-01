@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { StorageService } from '../../services/storage';
 
 @Component({
   selector: 'app-nav',
@@ -9,16 +10,29 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav.scss',
 })
 export class Nav {
-  isDark = signal(false);
+  private store = inject(StorageService);
+  protected isDark = signal(false);
+
+  ngOnInit() {
+    const savedTheme = this.store.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      this.isDark.set(true);
+      this.applyTheme(true);
+    }
+  }
 
   toggleTheme() {
-    this.isDark.update((v) => !v);
-    const html = document.documentElement;
+    const newState = !this.isDark();
+    this.isDark.set(newState);
 
-    if (this.isDark()) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+    this.store.setItem('theme', newState ? 'dark' : 'light');
+
+    this.applyTheme(newState);
+  }
+
+  private applyTheme(dark: boolean) {
+    if (dark) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
   }
 }
