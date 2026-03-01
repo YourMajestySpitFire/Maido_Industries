@@ -1,12 +1,10 @@
 <div class="w-full h-full overflow-y-auto bg-base">
-  <main class="animate-entry layout-container flex flex-col font-sans selection:bg-surface">
+  <main class="layout-container animate-entry font-sans selection:bg-surface">
     @let post = blogPost();
 
     @if (post) {
-      <article>
-        <header
-          class="mb-12 md:mb-16 2xl:mb-32 flex flex-col items-center md:items-start text-center md:text-left"
-        >
+      <article class="layout-gap">
+        <header class="flex flex-col items-center md:items-start text-center md:text-left">
           <h1
             class="text-4xl md:text-5xl lg:text-7xl 2xl:text-9xl font-extrabold tracking-tighter text-text leading-tight mb-6 2xl:mb-12"
           >

@@ -16,47 +16,62 @@
     --tw-prose-pre-code: var(--text);
 
     :where(h1, h2, h3, h4):not(:where([class~='not-prose'] *)) {
-      @apply tracking-tighter font-bold mt-10 mb-5;
+      @apply tracking-tighter font-bold mt-10 mb-5 2xl:mt-20 2xl:mb-10;
       color: var(--text);
       line-height: 1.2;
     }
 
     :where(h1):not(:where([class~='not-prose'] *)) {
-      @apply text-3xl sm:text-4xl;
+      @apply text-3xl sm:text-4xl 2xl:text-7xl;
     }
 
     :where(h2):not(:where([class~='not-prose'] *)) {
-      @apply text-2xl border-b pb-2;
-      border-color: rgba(204, 208, 218, 0.3); // odpowiednik var(--surface) z opacity
+      @apply text-2xl 2xl:text-5xl border-b pb-2;
+      border-color: color-mix(in srgb, var(--surface), transparent 70%);
     }
 
     :where(p):not(:where([class~='not-prose'] *)) {
-      @apply my-5 leading-relaxed;
+      @apply my-5 2xl:my-10 leading-relaxed 2xl:text-3xl font-medium;
       color: var(--subtext);
     }
 
-    :where(ul):not(:where([class~='not-prose'] *)) {
-      @apply list-disc list-outside ml-6 space-y-2 my-6;
+    :where(ul, ol):not(:where([class~='not-prose'] *)) {
+      @apply list-outside ml-6 space-y-2 2xl:space-y-6 my-6 2xl:my-12 2xl:text-3xl;
     }
 
+    :where(ul):not(:where([class~='not-prose'] *)) {
+      @apply list-disc;
+    }
     :where(ol):not(:where([class~='not-prose'] *)) {
-      @apply list-decimal list-outside ml-6 space-y-2 my-6;
+      @apply list-decimal;
     }
 
     :where(li):not(:where([class~='not-prose'] *)) {
       @apply pl-1;
     }
 
+    /* Obrazy i ich podpisy */
+    :where(img):not(:where([class~='not-prose'] *)) {
+      @apply rounded-2xl shadow-xl mx-auto my-12 2xl:my-20 border transition-transform duration-500 hover:scale-[1.01];
+      border-color: color-mix(in srgb, var(--surface), transparent 80%);
+    }
+
+    :where(img + em):not(:where([class~='not-prose'] *)) {
+      @apply block text-center text-sm md:text-base 2xl:text-2xl mt-[-2rem] mb-12 2xl:mb-20 font-medium;
+      color: var(--overlay); /* Naprawiony błąd: bezpośrednia zmienna zamiast @apply */
+    }
+
+    /* Kod */
     :where(code):not(:where([class~='not-prose'] *)) {
       @apply rounded px-1.5 py-0.5 text-[0.9em] font-mono before:content-none after:content-none;
-      background-color: rgba(204, 208, 218, 0.5);
+      background-color: color-mix(in srgb, var(--surface), transparent 50%);
       color: var(--text);
     }
 
     :where(pre):not(:where([class~='not-prose'] *)) {
-      @apply border backdrop-blur-sm rounded-xl !px-4 !py-4 my-8 overflow-x-auto font-mono text-sm;
+      @apply border backdrop-blur-sm rounded-xl !px-4 !py-4 2xl:!p-10 my-8 2xl:my-16 overflow-x-auto font-mono text-sm 2xl:text-2xl;
       border-color: var(--surface);
-      background-color: rgba(204, 208, 218, 0.3);
+      background-color: color-mix(in srgb, var(--surface), transparent 70%);
 
       code {
         background-color: transparent !important;
@@ -76,7 +91,7 @@
     }
 
     :where(blockquote):not(:where([class~='not-prose'] *)) {
-      @apply border-l-4 pl-6 italic my-8;
+      @apply border-l-4 pl-6 italic my-8 2xl:my-16 2xl:pl-10 2xl:text-3xl;
       border-color: var(--surface);
       color: var(--subtext);
     }

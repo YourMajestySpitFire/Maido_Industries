@@ -9,6 +9,10 @@
   --color-overlay: var(--overlay);
   --color-text: var(--text);
   --color-subtext: var(--subtext);
+
+  --spacing-section-sm: 3rem; /* 48px - Mobile */
+  --spacing-section-md: 4rem; /* 64px - Laptop / MacBook Air */
+  --spacing-section-4k: 9rem; /* 144px - Screens 4K */
 }
 
 @keyframes page-in {
@@ -32,6 +36,24 @@
 
 @utility layout-container {
   @apply mx-auto w-full max-w-[1100px] px-4 pt-8 md:pt-16 2xl:pt-28 pb-32;
+}
+
+@utility layout-gap {
+  @apply space-y-[--spacing-section-sm] md:space-y-[--spacing-section-md] 2xl:space-y-[--spacing-section-4k];
+}
+
+@utility layout-gap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-section-sm);
+
+  @media (min-width: 768px) {
+    gap: var(--spacing-section-md);
+  }
+
+  @media (min-width: 1536px) {
+    gap: var(--spacing-section-4k);
+  }
 }
 
 :root {
