@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './nav.html',
+  styleUrls: ['./nav.scss'],
 })
 export class Nav {
   isDark = signal(false);
