@@ -1,13 +1,13 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MarkdownComponent } from 'ngx-markdown';
+import { CommonModule } from '@angular/common';
 import { BlogPost, BlogService } from '../../services/blog';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [MarkdownComponent],
+  imports: [CommonModule],
   templateUrl: './blog-post-shell.html',
   styleUrl: './blog-post-shell.scss',
 })
@@ -17,7 +17,7 @@ export class BlogPostShell implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   protected blogPost = signal<BlogPost | undefined>(undefined);
-  protected markdownContent = signal<string>('');
+  protected htmlContent = signal<string>('');
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
@@ -32,8 +32,8 @@ export class BlogPostShell implements OnInit {
       this.blogService
         .getPostContent(slug)
         .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe((cleanContent) => {
-          this.markdownContent.set(cleanContent);
+        .subscribe((content) => {
+          this.htmlContent.set(content);
         });
     }
   }

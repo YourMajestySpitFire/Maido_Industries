@@ -19,16 +19,16 @@
             </time>
             <span class="h-1 w-1 2xl:h-2 2xl:w-2 rounded-full bg-surface"></span>
             <span class="text-xs md:text-sm 2xl:text-2xl uppercase tracking-widest font-bold">
-              Article
+              {{ post.format === 'html' ? 'Article' : 'Post' }}
             </span>
           </div>
         </header>
 
-        <markdown
+        <!-- HTML Content - Sanitized to prevent XSS -->
+        <div
           class="prose prose-custom dark:prose-invert max-w-none block"
-          [data]="markdownContent()"
-        >
-        </markdown>
+          [innerHTML]="htmlContent()"
+        ></div>
       </article>
     }
   </main>
