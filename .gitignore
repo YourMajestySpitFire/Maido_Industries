@@ -260,3 +260,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 .vscode/settings.json
+VPS_DEPLOYMENT.md
+COMPLETE_DEPLOYMENT_GUIDE.md

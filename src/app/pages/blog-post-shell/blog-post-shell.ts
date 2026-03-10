@@ -59,17 +59,18 @@ export class BlogPostShell implements OnInit {
   }
 
   onButtonClick() {
+    // Use relative URL for remote VPS deployment
+    // nginx will proxy /api/* requests to the backend container
     this.http
-      .post<{ message: string }>('http://localhost:5000/run-function', {})
+      .post<{ message: string }>('/api/run-function', {})
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (response) => {
           this.functionMessage.set(response.message);
-          console.log('Python function response:', response);
         },
         error: (error) => {
           console.error('Error calling Python function:', error);
-          this.functionMessage.set('Error: Could not reach Python backend');
+          this.functionMessage.set('Error: Could not reach backend service');
         },
       });
   }
