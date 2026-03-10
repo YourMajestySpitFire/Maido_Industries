@@ -29,6 +29,13 @@
           class="prose prose-custom dark:prose-invert max-w-none block"
           [innerHTML]="htmlContent()"
         ></div>
+
+        <!-- Python Function Response Message -->
+        @if (functionMessage()) {
+          <div class="mt-4 p-4 bg-surface rounded text-text">
+            {{ functionMessage() }}
+          </div>
+        }
       </article>
     }
   </main>
