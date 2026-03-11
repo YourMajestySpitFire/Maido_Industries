@@ -88,3 +88,8 @@ body {
     background-color 0.3s ease,
     color 0.3s ease !important;
 }
+
+.prose-custom :where(blockquote):not(:where([class~=not-prose] *)) {
+    margin-block: calc(var(--spacing, 0.25rem) * 8);
+    border-left-style: var(--tw-border-style);
+}
