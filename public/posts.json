@@ -1,14 +1,23 @@
 [
   {
+    "slug": "example-pos-3",
+    "title": "New World!",
+    "date": "2026-03-09",
+    "description": "Zycie jest super",
+    "format": "html"
+  },
+  {
     "slug": "example-pos-2",
-    "title": "Mistrzostwo Markdown: Edycja z Kotkiem 🐾",
+    "title": "Mistrzostwo HTML: Edycja z Kotkiem 🐾",
     "date": "2026-03-01",
-    "description": "Kompletny przewodnik po formatowaniu treści z wykorzystaniem multimediów, list i zaawansowanego kodu."
+    "description": "Kompletny przewodnik po formatowaniu treści s wykorzystaniem multimediów, list i zaawansowanego kodu.",
+    "format": "html"
   },
   {
     "slug": "example-post",
     "title": "Mój pierwszy post",
     "date": "2026-03-01",
-    "description": "To jest testowy post na moim nowym blogu, ładowany z automatu."
+    "description": "To jest testowy post na moim nowym blogu, ładowany z automatu.",
+    "format": "html"
   }
 ]

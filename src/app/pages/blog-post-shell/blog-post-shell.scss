@@ -1,7 +1,6 @@
 @reference "tailwindcss";
 
-:host ::ng-deep {
-  .prose-custom {
+.prose-custom {
     --tw-prose-body: var(--text);
     --tw-prose-headings: var(--text);
     --tw-prose-links: var(--text);
@@ -95,5 +94,4 @@
       border-color: var(--surface);
       color: var(--subtext);
     }
-  }
 }
