@@ -1,6 +1,6 @@
 @reference "tailwindcss";
 
-:host ::ng-deep {
+:host :ng-deep {
   .prose-custom {
     --tw-prose-body: var(--text);
     --tw-prose-headings: var(--text);
